@@ -37,20 +37,4 @@ class LinkedList:
             current_node = current_node.next
         print(current_node.data)
 
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(3)
-ll.append(4)
-ll.print_list()
-ll.prepend(-1)
-ll.prepend(-2)
-ll.prepend(-3)
-ll.prepend(-4)
-ll.print_list()
-ll.position_insert(3,0.6)
-ll.position_insert(1,0.7)
-ll.position_insert(5,0.9)
-ll.print_list()
-
 

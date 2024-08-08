@@ -30,11 +30,23 @@ class LinkedList:
         temp = current_node.next
         current_node.next = new_node
         current_node.next.next = temp
-    def print_list(self):
+    def position_delete(self,position,value):
+        counter = 0
         current_node = self.head
+        while current_node.next and counter<position-1:
+            current_node = current_node.next
+            counter = counter + 1
+        current_node.next = current_node.next.next
+    def print_list(self):
+        current_node = self.heads
         while current_node.next:
             print(current_node.data,end="->")
             current_node = current_node.next
         print(current_node.data)
+
+
+
+
+
 
 

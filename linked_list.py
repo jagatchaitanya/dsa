@@ -24,11 +24,9 @@ class LinkedList:
         new_node=Node(value)
         counter = 0
         current_node = self.head
-        while current_node.next:
-            counter = counter + 1
-            if counter == position:
-                break
+        while current_node.next and counter<position-1:
             current_node = current_node.next
+            counter = counter + 1
         temp = current_node.next
         current_node.next = new_node
         current_node.next.next = temp
@@ -51,7 +49,8 @@ ll.prepend(-3)
 ll.prepend(-4)
 ll.print_list()
 ll.position_insert(3,0.6)
-ll.position_insert(3,0.7)
+ll.position_insert(1,0.7)
+ll.position_insert(5,0.9)
 ll.print_list()
 
 

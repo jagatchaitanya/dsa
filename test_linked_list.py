@@ -24,9 +24,13 @@ class TestLinkedList(unittest.TestCase):
         self.ll.position_insert(1, 1.5)
         self.assertEqual(self.ll.head.next.data, 1.5)
         
-    #def test_position_insert_invalid(self):
-        #with self.assertRaises(ValueError):
-            #self.ll.position_insert(-1, 1)
+    def test_position_insert_invalid(self):
+        with self.assertRaises(ValueError) as context:
+            self.ll.position_insert(-1, 1)
+            self.assertEqual(str(context.exception), "position mentioned is out of bounds")
+        with self.assertRaises(ValueError) as context:
+            self.ll.position_insert(20,1)
+            self.assertEqual(str(context.exception), "position mentioned is out of bounds")
 
 if __name__ == '__main__':
     unittest.main()

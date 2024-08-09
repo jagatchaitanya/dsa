@@ -21,12 +21,19 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
     def position_insert(self,position,value):
+        if position == 0:
+            self.append(value)
+            return 
         new_node=Node(value)
         counter = 0
         current_node = self.head
+        if position < 0:
+            raise ValueError("position mentioned is out of bounds")
         while current_node.next and counter<position-1:
             current_node = current_node.next
             counter = counter + 1
+        if position > counter+1:
+            raise ValueError("position mentioned is out of bounds")
         temp = current_node.next
         current_node.next = new_node
         current_node.next.next = temp

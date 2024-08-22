@@ -6,7 +6,7 @@ class Node:
 def midpoint_linkedlist(head):
     fast = head
     slow = head
-    while fast:
+    while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
     return slow

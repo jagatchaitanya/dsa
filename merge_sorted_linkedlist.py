@@ -12,7 +12,7 @@ def merge_sortedlinkedlist(list1, list2):
             list1 = list1.next
         else:
             tail.next = list2
-            list2 = list2.next
+            list2 = list2.nextso
         tail = tail.next
     if list1:
         tail.next = list1
@@ -38,7 +38,3 @@ if __name__=="__main__":
     while current:
         print(current.data, end=" ")
         current = current.next
-
-
-
-
